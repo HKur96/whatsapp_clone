@@ -1,0 +1,29 @@
+import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/colors.dart';
+
+class CustomButton extends StatelessWidget {
+  final String title;
+  final Function() onPressed;
+  const CustomButton({
+    super.key,
+    required this.title,
+    required this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        backgroundColor: tabColor,
+        minimumSize: const Size(double.infinity, 50)
+      ),
+      child: Text(
+        title,
+        style: const TextStyle(
+          color: Colors.black,
+        ),
+      ),
+    );
+  }
+}
